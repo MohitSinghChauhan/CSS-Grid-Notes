@@ -1,0 +1,44 @@
+.container {
+    width: 800px;
+    margin: 40px auto;
+    background-color: #ddd;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 150px);
+    grid-gap: 1rem;
+
+    /** Aligning items in Grid are same as in Flexbox */
+
+    /** justify-items used to align horizontally in the cell, after using this property item inside cell will not take whole place on cell */
+    justify-items: start;
+
+    /** align-items used to align item vertically in the cell, after using this property item inside cell will not take whole place on cell  */
+    align-items: end;
+
+    /*! If you want to align grid tracks then use justify-content and align-content  */
+    /*! If you want to align grid tracks then use justify-content and align-content  */
+    /*! If you want to align grid tracks then use justify-content and align-content  */
+    /** in that you can use flexbox properties like space eb=venly, space-between, etc  */
+  }
+
+.item{
+    background-color: royalblue;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.item-1{
+    /** For individual elements we use justify-self property  */
+    /* justify-self: center; */
+    /** same for align-self  */
+    /* align-self: center; */
+    
+    /** these properties consider defined area of cell that is selected through css selectors while positioning  */
+    justify-self: center;
+    align-self: center; 
+    /* area defined here of the cell */
+    grid-row: 1 / 3;
+    grid-column: 1 / -1;
+}
