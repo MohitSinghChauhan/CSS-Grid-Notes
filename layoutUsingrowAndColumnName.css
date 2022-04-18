@@ -1,0 +1,59 @@
+.container {
+  width: 800px;
+  margin: 40px auto;
+  background-color: #ddd;
+  display: grid;
+  grid-template-rows: [header-start] 1fr [header-end main-start] 1fr 1fr [main-end box-start] 1fr [box-end footer-start] 1fr [footer-end];
+  grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+  grid-gap: 1rem;
+}
+
+.container div {
+  background-color: royalblue;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.header {
+  grid-row: header-start / header-end;
+  grid-column: col-start 1 / col-end 4;
+  grid-column: col-start 1 / col-end -1;
+  /*! Anomalous Behaviour of grid if we use here col-end 5 of 4 columns in template */
+  grid-column: col-start 1 / col-end 5;
+
+  grid-column: 1 /  5;
+}
+
+.sidebar {
+  grid-row: main-start / box-end;
+  grid-column: 1 / 2;
+}
+
+.footer {
+  grid-row: footer-start / footer-end;
+  grid-column: 1 / -1;
+}
+
+.main {
+  grid-row: main-start / main-end;
+  grid-column: 2 / -1;
+}
+
+/** We don't need to write below code they will adjust automatically according to the placement algorithm of grid but these box are dependent on above code if that changes in future then they also change according to the change so it's better to specify their positions*/
+
+.box-1 {
+  grid-row: 4 / 5;
+  grid-column: 2 / 3;
+}
+
+.box-2 {
+  grid-row: 4 / 5;
+  grid-column: 3 / 4;
+}
+
+.box-3 {
+  grid-row: 4 / 5;
+  grid-column: col-start 4 / col-end 4;
+}

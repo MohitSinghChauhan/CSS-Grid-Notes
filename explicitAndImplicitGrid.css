@@ -1,0 +1,26 @@
+.container {
+    width: 800px;
+    margin: 40px auto;
+    background-color: #ddd;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 150px);
+    /** Other 4 cells that are outside of this template grid are called as implicit grid*/
+    grid-gap: 1rem;
+
+    /** here we have 3 properties  */
+    /** Defines the flow of extra cells or implicit grid  */
+    grid-auto-flow: column; 
+    /** Defines the size of extra rows or implicit grid rows (used when if grid-auto-flow: row) */
+    grid-auto-rows: 200px;
+    /** Defines the size of extra columns or implicit grid columns (used when if grid-auto-flow: column) */
+    grid-auto-columns: 300px;
+  }
+
+.item{
+    background-color: royalblue;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,100 @@
+.container{
+    width: 900px;
+    background-color: #dddd;
+    margin: 40px auto;
+    display: grid;
+
+    /* grid-template-rows: 150px 150px;
+    grid-template-columns: 150px 150px 150px; */
+    
+    /* grid-template-rows: 150px auto; */
+    /* grid-template-columns: 150px auto auto; */
+    /** auto is used to take available space... but not a recommended method. */
+
+    /** We use fractional value (fr) it is defined for css grid & help us to divide space as a fraction of space available  */
+    /* grid-template-rows: 150px 1fr;  */
+
+    /** if we use 1fr with a specified value then it will make first row 150px wide and give available space to 1fr row. */
+    /* grid-template-columns: 2fr 3fr 1fr; */
+
+    /** or you can use repeat() instead of typing same parameter again nd again*/
+    /* grid-template-columns: 50% repeat(2,1fr); */
+
+    /** grid-template-rows isn't used that much */
+    /* grid-template-rows: repeat(3,1fr); */
+    grid-template-columns:  repeat(3,1fr);
+
+
+    /* grid-row-gap: 50px;
+    grid-column-gap: 100px; */
+    /** Shorthand Property */
+    grid-gap: 50px 50px; 
+
+    /** using this grid item row height change (auto) according to the content in it and also defines min-height for row or width for columns */
+    /** Use when grid-template-rows is not defined */
+    grid-auto-rows: minmax(200px, auto);
+    
+}
+
+.item{
+    padding: 20px;
+    font-size: 25px;
+    color: #FFF;
+}
+
+.item-1{
+    background-color: midnightblue;
+    
+    /** Way to change the position of the grid items */
+    /* grid-row-start: 1;
+    grid-row-end: 3; 
+    grid-column-start: 1;
+    grid-column-end: 2; */
+   
+}
+ 
+.item-2{
+    background-color: magenta;
+    /* grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4; */
+
+    /** Shorthand for above properties */
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+
+    /** More Shorthand way of writing above prop. */
+    /*? grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end; */
+    grid-area: 1 / 3 / 3 / 4;
+
+
+}
+ 
+.item-3{
+    background-color: goldenrod;
+}
+ 
+.item-4{
+    background-color: orangered;
+}
+ 
+.item-5{
+    background-color: royalblue;
+}
+
+.item-6{
+    background-color: greenyellow;
+    /*! you can also use - (negative sign) for selecting last line*/
+    /* grid-column: 1 / -1; */
+
+    /** The grid items starts before the first column and spans for 3 columns, */
+    /* grid-column: 1 / span 3; */
+    
+    /* grid-column: 2 / span 2; */
+
+
+    /** The grid item spans 3 columns. */
+    /* grid-column: span 3; */
+}
+ 
